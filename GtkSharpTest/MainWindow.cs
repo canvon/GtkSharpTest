@@ -32,7 +32,7 @@ public partial class MainWindow: Gtk.Window
 			string line;
 			while ((line = reader.ReadLine()) != null)
 			{
-				buf.Insert(ref iter, line);
+				buf.Insert(ref iter, line + Environment.NewLine);
 			}
 		}
 	}
