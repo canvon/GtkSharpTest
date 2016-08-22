@@ -16,6 +16,8 @@ public partial class MainWindow: Gtk.Window
 
 	protected void OnButtonDoSomethingClicked(object sender, EventArgs e)
 	{
-		throw new NotImplementedException();
+		MessageDialog dialog = new MessageDialog(this, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok,
+		                                         "Hello, world!");
+		dialog.Show();
 	}
 }
