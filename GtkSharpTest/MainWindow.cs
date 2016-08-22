@@ -21,4 +21,9 @@ public partial class MainWindow: Gtk.Window
 		dialog.Run();
 		dialog.Destroy();
 	}
+
+	protected void OnButtonReadLogClicked(object sender, EventArgs e)
+	{
+		throw new NotImplementedException();
+	}
 }

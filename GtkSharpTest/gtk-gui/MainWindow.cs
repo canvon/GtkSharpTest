@@ -9,7 +9,11 @@ public partial class MainWindow
 	
 	private global::Gtk.TextView textviewLogContents;
 	
+	private global::Gtk.HBox hbox1;
+	
 	private global::Gtk.Button buttonDoSomething;
+	
+	private global::Gtk.Button buttonReadLog;
 
 	protected virtual void Build ()
 	{
@@ -37,16 +41,34 @@ public partial class MainWindow
 		global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.GtkScrolledWindow]));
 		w2.Position = 1;
 		// Container child vbox1.Gtk.Box+BoxChild
+		this.hbox1 = new global::Gtk.HBox ();
+		this.hbox1.Name = "hbox1";
+		this.hbox1.Spacing = 6;
+		// Container child hbox1.Gtk.Box+BoxChild
 		this.buttonDoSomething = new global::Gtk.Button ();
 		this.buttonDoSomething.CanFocus = true;
 		this.buttonDoSomething.Name = "buttonDoSomething";
 		this.buttonDoSomething.UseUnderline = true;
 		this.buttonDoSomething.Label = global::Mono.Unix.Catalog.GetString ("Do something");
-		this.vbox1.Add (this.buttonDoSomething);
-		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.buttonDoSomething]));
-		w3.Position = 2;
+		this.hbox1.Add (this.buttonDoSomething);
+		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.buttonDoSomething]));
+		w3.Position = 0;
 		w3.Expand = false;
 		w3.Fill = false;
+		// Container child hbox1.Gtk.Box+BoxChild
+		this.buttonReadLog = new global::Gtk.Button ();
+		this.buttonReadLog.CanFocus = true;
+		this.buttonReadLog.Name = "buttonReadLog";
+		this.buttonReadLog.UseUnderline = true;
+		this.buttonReadLog.Label = global::Mono.Unix.Catalog.GetString ("Read log");
+		this.hbox1.Add (this.buttonReadLog);
+		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.buttonReadLog]));
+		w4.Position = 1;
+		this.vbox1.Add (this.hbox1);
+		global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox1]));
+		w5.Position = 2;
+		w5.Expand = false;
+		w5.Fill = false;
 		this.Add (this.vbox1);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
@@ -56,5 +78,6 @@ public partial class MainWindow
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 		this.buttonDoSomething.Clicked += new global::System.EventHandler (this.OnButtonDoSomethingClicked);
+		this.buttonReadLog.Clicked += new global::System.EventHandler (this.OnButtonReadLogClicked);
 	}
 }
