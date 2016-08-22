@@ -26,6 +26,8 @@ public partial class MainWindow
 		this.logviewwidget1 = new global::GtkSharpTest.LogViewWidget ();
 		this.logviewwidget1.Events = ((global::Gdk.EventMask)(256));
 		this.logviewwidget1.Name = "logviewwidget1";
+		this.logviewwidget1.LogName = "syslog";
+		this.logviewwidget1.LogFilePath = "/var/log/syslog";
 		this.vbox1.Add (this.logviewwidget1);
 		global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.logviewwidget1]));
 		w1.Position = 1;

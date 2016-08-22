@@ -6,6 +6,8 @@ namespace GtkSharpTest
 	{
 		private global::Gtk.VBox vbox1;
 		
+		private global::Gtk.Label labelLogName;
+		
 		private global::Gtk.ScrolledWindow GtkScrolledWindow;
 		
 		private global::Gtk.TextView textviewLogContents;
@@ -23,6 +25,15 @@ namespace GtkSharpTest
 			this.vbox1.Name = "vbox1";
 			this.vbox1.Spacing = 6;
 			// Container child vbox1.Gtk.Box+BoxChild
+			this.labelLogName = new global::Gtk.Label ();
+			this.labelLogName.Name = "labelLogName";
+			this.labelLogName.LabelProp = global::Mono.Unix.Catalog.GetString ("Log name");
+			this.vbox1.Add (this.labelLogName);
+			global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.labelLogName]));
+			w1.Position = 0;
+			w1.Expand = false;
+			w1.Fill = false;
+			// Container child vbox1.Gtk.Box+BoxChild
 			this.GtkScrolledWindow = new global::Gtk.ScrolledWindow ();
 			this.GtkScrolledWindow.Name = "GtkScrolledWindow";
 			this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
@@ -34,8 +45,8 @@ namespace GtkSharpTest
 			this.textviewLogContents.WrapMode = ((global::Gtk.WrapMode)(1));
 			this.GtkScrolledWindow.Add (this.textviewLogContents);
 			this.vbox1.Add (this.GtkScrolledWindow);
-			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.GtkScrolledWindow]));
-			w2.Position = 1;
+			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.GtkScrolledWindow]));
+			w3.Position = 1;
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.buttonReadLog = new global::Gtk.Button ();
 			this.buttonReadLog.CanFocus = true;
@@ -43,10 +54,10 @@ namespace GtkSharpTest
 			this.buttonReadLog.UseUnderline = true;
 			this.buttonReadLog.Label = global::Mono.Unix.Catalog.GetString ("Read log");
 			this.vbox1.Add (this.buttonReadLog);
-			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.buttonReadLog]));
-			w3.Position = 2;
-			w3.Expand = false;
-			w3.Fill = false;
+			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.buttonReadLog]));
+			w4.Position = 2;
+			w4.Expand = false;
+			w4.Fill = false;
 			this.Add (this.vbox1);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();

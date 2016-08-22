@@ -24,6 +24,8 @@
           <widget class="GtkSharpTest.LogViewWidget" id="logviewwidget1">
             <property name="MemberName" />
             <property name="Events">ButtonPressMask</property>
+            <property name="LogName">syslog</property>
+            <property name="LogFilePath">/var/log/syslog</property>
           </widget>
           <packing>
             <property name="Position">1</property>
@@ -72,7 +74,16 @@
         <property name="MemberName" />
         <property name="Spacing">6</property>
         <child>
-          <placeholder />
+          <widget class="Gtk.Label" id="labelLogName">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Log name</property>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
         </child>
         <child>
           <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
