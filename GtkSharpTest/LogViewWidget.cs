@@ -35,7 +35,19 @@ namespace GtkSharpTest
 
 		protected void OnButtonReadLogClicked(object sender, EventArgs e)
 		{
-			ReadLogSafe();
+			Gdk.Window win = this.GdkWindow;
+
+			using (Gdk.Cursor curWatch = new Gdk.Cursor(Gdk.CursorType.Watch)) {
+				try {
+					win.Cursor = curWatch;
+					Application.RunIteration(false);
+
+					ReadLogSafe();
+				}
+				finally {
+					win.Cursor = null;
+				}
+			}
 		}
 
 		public void ReadLog()
