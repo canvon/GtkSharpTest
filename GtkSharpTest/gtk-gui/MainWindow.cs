@@ -5,15 +5,11 @@ public partial class MainWindow
 {
 	private global::Gtk.VBox vbox1;
 	
-	private global::Gtk.ScrolledWindow GtkScrolledWindow;
-	
-	private global::Gtk.TextView textviewLogContents;
+	private global::GtkSharpTest.LogViewWidget logviewwidget1;
 	
 	private global::Gtk.HBox hbox1;
 	
 	private global::Gtk.Button buttonDoSomething;
-	
-	private global::Gtk.Button buttonReadLog;
 
 	protected virtual void Build ()
 	{
@@ -27,19 +23,12 @@ public partial class MainWindow
 		this.vbox1.Name = "vbox1";
 		this.vbox1.Spacing = 6;
 		// Container child vbox1.Gtk.Box+BoxChild
-		this.GtkScrolledWindow = new global::Gtk.ScrolledWindow ();
-		this.GtkScrolledWindow.Name = "GtkScrolledWindow";
-		this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
-		// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
-		this.textviewLogContents = new global::Gtk.TextView ();
-		this.textviewLogContents.CanFocus = true;
-		this.textviewLogContents.Name = "textviewLogContents";
-		this.textviewLogContents.Editable = false;
-		this.textviewLogContents.WrapMode = ((global::Gtk.WrapMode)(1));
-		this.GtkScrolledWindow.Add (this.textviewLogContents);
-		this.vbox1.Add (this.GtkScrolledWindow);
-		global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.GtkScrolledWindow]));
-		w2.Position = 1;
+		this.logviewwidget1 = new global::GtkSharpTest.LogViewWidget ();
+		this.logviewwidget1.Events = ((global::Gdk.EventMask)(256));
+		this.logviewwidget1.Name = "logviewwidget1";
+		this.vbox1.Add (this.logviewwidget1);
+		global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.logviewwidget1]));
+		w1.Position = 1;
 		// Container child vbox1.Gtk.Box+BoxChild
 		this.hbox1 = new global::Gtk.HBox ();
 		this.hbox1.Name = "hbox1";
@@ -51,24 +40,15 @@ public partial class MainWindow
 		this.buttonDoSomething.UseUnderline = true;
 		this.buttonDoSomething.Label = global::Mono.Unix.Catalog.GetString ("Do something");
 		this.hbox1.Add (this.buttonDoSomething);
-		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.buttonDoSomething]));
-		w3.Position = 0;
+		global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.buttonDoSomething]));
+		w2.Position = 0;
+		w2.Expand = false;
+		w2.Fill = false;
+		this.vbox1.Add (this.hbox1);
+		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox1]));
+		w3.Position = 2;
 		w3.Expand = false;
 		w3.Fill = false;
-		// Container child hbox1.Gtk.Box+BoxChild
-		this.buttonReadLog = new global::Gtk.Button ();
-		this.buttonReadLog.CanFocus = true;
-		this.buttonReadLog.Name = "buttonReadLog";
-		this.buttonReadLog.UseUnderline = true;
-		this.buttonReadLog.Label = global::Mono.Unix.Catalog.GetString ("Read log");
-		this.hbox1.Add (this.buttonReadLog);
-		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.buttonReadLog]));
-		w4.Position = 1;
-		this.vbox1.Add (this.hbox1);
-		global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox1]));
-		w5.Position = 2;
-		w5.Expand = false;
-		w5.Fill = false;
 		this.Add (this.vbox1);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
@@ -78,6 +58,5 @@ public partial class MainWindow
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 		this.buttonDoSomething.Clicked += new global::System.EventHandler (this.OnButtonDoSomethingClicked);
-		this.buttonReadLog.Clicked += new global::System.EventHandler (this.OnButtonReadLogClicked);
 	}
 }
