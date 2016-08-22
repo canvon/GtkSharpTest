@@ -5,6 +5,10 @@ public partial class MainWindow
 {
 	private global::Gtk.VBox vbox1;
 	
+	private global::Gtk.ScrolledWindow GtkScrolledWindow;
+	
+	private global::Gtk.TextView textviewLogContents;
+	
 	private global::Gtk.Button buttonDoSomething;
 
 	protected virtual void Build ()
@@ -19,16 +23,30 @@ public partial class MainWindow
 		this.vbox1.Name = "vbox1";
 		this.vbox1.Spacing = 6;
 		// Container child vbox1.Gtk.Box+BoxChild
+		this.GtkScrolledWindow = new global::Gtk.ScrolledWindow ();
+		this.GtkScrolledWindow.Name = "GtkScrolledWindow";
+		this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
+		// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
+		this.textviewLogContents = new global::Gtk.TextView ();
+		this.textviewLogContents.CanFocus = true;
+		this.textviewLogContents.Name = "textviewLogContents";
+		this.textviewLogContents.Editable = false;
+		this.textviewLogContents.WrapMode = ((global::Gtk.WrapMode)(1));
+		this.GtkScrolledWindow.Add (this.textviewLogContents);
+		this.vbox1.Add (this.GtkScrolledWindow);
+		global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.GtkScrolledWindow]));
+		w2.Position = 1;
+		// Container child vbox1.Gtk.Box+BoxChild
 		this.buttonDoSomething = new global::Gtk.Button ();
 		this.buttonDoSomething.CanFocus = true;
 		this.buttonDoSomething.Name = "buttonDoSomething";
 		this.buttonDoSomething.UseUnderline = true;
 		this.buttonDoSomething.Label = global::Mono.Unix.Catalog.GetString ("Do something");
 		this.vbox1.Add (this.buttonDoSomething);
-		global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.buttonDoSomething]));
-		w1.Position = 2;
-		w1.Expand = false;
-		w1.Fill = false;
+		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.buttonDoSomething]));
+		w3.Position = 2;
+		w3.Expand = false;
+		w3.Fill = false;
 		this.Add (this.vbox1);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
