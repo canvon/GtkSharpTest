@@ -40,20 +40,37 @@ namespace GtkSharpTest
 
 		public void ReadLog()
 		{
-			if (string.IsNullOrEmpty(_LogFilePath))
-				throw new InvalidOperationException(
-					string.Format("No proper log file path set: \"{0}\"", _LogFilePath));
+			TextBuffer buf = this.textviewLogContents.Buffer;
+			TextIter iter;
 
-			using (TextReader reader = new StreamReader(_LogFilePath)) {
-				TextBuffer buf = this.textviewLogContents.Buffer;
-				TextIter iter = buf.EndIter;
+			try {
+				buf.BeginUserAction();
 
-				string line;
-				while ((line = reader.ReadLine()) != null)
-				{
-					buf.Insert(ref iter, line + Environment.NewLine);
+				// Always clear first, so that when the user clicks the error message away
+				// he won't be able to confuse previous content to be new/current content.
+				buf.Clear();
+
+				if (string.IsNullOrEmpty(_LogFilePath))
+					throw new InvalidOperationException(
+						string.Format("No proper log file path set: \"{0}\"", _LogFilePath));
+
+				using (TextReader reader = new StreamReader(_LogFilePath)) {
+					iter = buf.EndIter;
+
+					string line;
+					while ((line = reader.ReadLine()) != null)
+					{
+						buf.Insert(ref iter, line + Environment.NewLine);
+					}
 				}
 			}
+			finally {
+				buf.EndUserAction();
+			}
+
+			// Scroll to bottom, so that possibly the last line is visible.
+			buf.PlaceCursor(iter);
+			this.textviewLogContents.ScrollToIter(iter, 0, true, 0, 0);
 		}
 
 		public bool ReadLogSafe()
