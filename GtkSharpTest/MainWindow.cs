@@ -18,6 +18,7 @@ public partial class MainWindow: Gtk.Window
 	{
 		MessageDialog dialog = new MessageDialog(this, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok,
 		                                         "Hello, world!");
-		dialog.Show();
+		dialog.Run();
+		dialog.Destroy();
 	}
 }
