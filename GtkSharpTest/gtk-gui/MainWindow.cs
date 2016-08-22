@@ -5,7 +5,7 @@ public partial class MainWindow
 {
 	private global::Gtk.VBox vbox1;
 	
-	private global::Gtk.Button button1;
+	private global::Gtk.Button buttonDoSomething;
 
 	protected virtual void Build ()
 	{
@@ -19,13 +19,13 @@ public partial class MainWindow
 		this.vbox1.Name = "vbox1";
 		this.vbox1.Spacing = 6;
 		// Container child vbox1.Gtk.Box+BoxChild
-		this.button1 = new global::Gtk.Button ();
-		this.button1.CanFocus = true;
-		this.button1.Name = "button1";
-		this.button1.UseUnderline = true;
-		this.button1.Label = global::Mono.Unix.Catalog.GetString ("GtkButton");
-		this.vbox1.Add (this.button1);
-		global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.button1]));
+		this.buttonDoSomething = new global::Gtk.Button ();
+		this.buttonDoSomething.CanFocus = true;
+		this.buttonDoSomething.Name = "button1";
+		this.buttonDoSomething.UseUnderline = true;
+		this.buttonDoSomething.Label = global::Mono.Unix.Catalog.GetString ("GtkButton");
+		this.vbox1.Add (this.buttonDoSomething);
+		global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.buttonDoSomething]));
 		w1.Position = 2;
 		w1.Expand = false;
 		w1.Fill = false;

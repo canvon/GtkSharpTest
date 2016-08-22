@@ -24,11 +24,11 @@
           <placeholder />
         </child>
         <child>
-          <widget class="Gtk.Button" id="button1">
+          <widget class="Gtk.Button" id="buttonDoSomething">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">GtkButton</property>
+            <property name="Label" translatable="yes">Do something</property>
             <property name="UseUnderline">True</property>
           </widget>
           <packing>
