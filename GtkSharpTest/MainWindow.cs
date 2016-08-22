@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Gtk;
 
 public partial class MainWindow: Gtk.Window
@@ -24,6 +25,15 @@ public partial class MainWindow: Gtk.Window
 
 	protected void OnButtonReadLogClicked(object sender, EventArgs e)
 	{
-		throw new NotImplementedException();
+		using (TextReader reader = new StreamReader("/var/log/syslog")) {
+			TextBuffer buf = this.textviewLogContents.Buffer;
+			TextIter iter = buf.EndIter;
+
+			string line;
+			while ((line = reader.ReadLine()) != null)
+			{
+				buf.Insert(ref iter, line);
+			}
+		}
 	}
 }
