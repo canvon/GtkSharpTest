@@ -21,9 +21,9 @@ public partial class MainWindow
 		// Container child vbox1.Gtk.Box+BoxChild
 		this.buttonDoSomething = new global::Gtk.Button ();
 		this.buttonDoSomething.CanFocus = true;
-		this.buttonDoSomething.Name = "button1";
+		this.buttonDoSomething.Name = "buttonDoSomething";
 		this.buttonDoSomething.UseUnderline = true;
-		this.buttonDoSomething.Label = global::Mono.Unix.Catalog.GetString ("GtkButton");
+		this.buttonDoSomething.Label = global::Mono.Unix.Catalog.GetString ("Do something");
 		this.vbox1.Add (this.buttonDoSomething);
 		global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.buttonDoSomething]));
 		w1.Position = 2;
